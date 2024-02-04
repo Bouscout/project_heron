@@ -42,28 +42,28 @@ export const Navigation:FC<Props> = ({ isOpen, lang }) => {
 
 
 
-const variantsButton = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 }
-    }
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    }
-  }
-};
+// const variantsButton = {
+//   open: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       y: { stiffness: 1000, velocity: -100 }
+//     }
+//   },
+//   closed: {
+//     y: 50,
+//     opacity: 0,
+//     transition: {
+//       y: { stiffness: 1000 },
+//     }
+//   }
+// };
 
 
-const TrialButton = () => (
-    <motion.button variants={variantsButton} >
-        <a href="/formulaire">Join Waitlist</a>
-        <i className="fa-solid fa-chevron-right" />
-    </motion.button>
+// const TrialButton = () => (
+//     <motion.button variants={variantsButton} >
+//         <a href="/formulaire">Join Waitlist</a>
+//         <i className="fa-solid fa-chevron-right" />
+//     </motion.button>
       
-)
+// )
