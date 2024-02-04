@@ -1,0 +1,147 @@
+
+@import "../colors";
+@import "../font";
+
+#blog {
+    margin-top: clamp(50px, 8vh, 150px);
+}
+header {
+    width: var(--blog-width);
+    margin-inline: auto;
+    margin-top: 4em;
+    margin-bottom: 0.4em;
+    color: #fff;
+    background-image: linear-gradient(to right, $light-blue ,$light-purple) ;
+    background-clip: text;
+
+    h1 {
+        text-align: center;
+        font-family: $font-family-5;
+        font-size: 1.7em;
+        color: transparent;
+    }
+    h2{
+        text-align: center;
+        font-family: $font-family-5;
+        font-size: 0.7em;
+        font-weight: 600;
+        color: transparent;
+    }
+
+    div{
+        width: 50%;
+        border-radius: 2px;
+        margin : 0 auto ;
+        height: 4px;
+        background: linear-gradient(to right, $light-blue, $light-purple);
+    }
+
+    hr {
+        margin: 0.5em auto;
+        width: 75%;
+        border: 2px solid transparent;
+        border-top: 2px solid $iris;
+    }
+
+    img {
+        margin: 0.2em 0;
+        width: 100%;
+        border-radius: 0.3em;
+    }
+}
+
+
+main{
+    margin-inline: auto;
+    width: var(--blog-width);
+}
+
+article {
+   
+    $text-size : 0.6em;
+
+    figure {
+        display: table; /* This makes the figure behave like a block element but allows captions to be displayed under the image */
+        margin-block: 0.5em;
+        width: 97%;
+
+        figcaption{
+            font-family: $font-family-5;
+            font-weight: 500;
+            font-size: 0.35em;
+            margin-top: 0em;
+            color: $light-white;
+        }
+        
+        img{
+            border-radius: 0.2em;
+            width: 100%;
+            margin-inline: auto;
+        }
+        
+    }
+
+    h2 {
+        margin-top: 1em;
+        margin-bottom: 0.3em;
+        width: 97%;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: var(--ink);
+        font-family: $font-family-5;
+    }
+    
+    p {
+        margin-bottom: 1em;
+        width: 97%;
+        font-family: $font-family-5;
+        font-size: $text-size;
+        font-weight: 450;
+        line-height: 1.5em;
+        color: var(--color);
+    }
+
+    ul{
+        width: 90%;
+        margin: 0.1em auto ;
+    }
+
+    a {
+        text-decoration: none;
+        color: $iris;
+        transition: color 200ms linear;
+        cursor: pointer;
+        &:hover{
+            color: $light-blue;
+        }
+    }
+
+    
+    li {
+        font-size: $text-size;
+        font-weight: 450;
+        line-height: 2em;
+        font-family: $font-family-5;
+
+        a{
+            color: var(--color);
+        }
+
+        &::marker{
+            color: $bright-purple;
+        }
+    }
+
+    hr {
+        width: 100%;
+        border: 2px solid transparent;
+        border-top: 2px solid $deep-iris;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    #blog-post{
+    font-size: 9vmin;
+    }
+}

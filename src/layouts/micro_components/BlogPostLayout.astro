@@ -1,0 +1,84 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../Layout.astro';
+import Footer from '../Footer.astro';
+import Navbar from '../../components/navbar/navbar.astro';
+
+import { getTextDateWBy } from "../../components/blog_template/utils"
+import BlogHeader from "../../components/blog_template/micro_components/blog_header";
+import BlogImage from "../../components/blog_template/micro_components/blog_img";
+
+import "./blog_post.scss"
+
+type Props = CollectionEntry<'blog'>['data'];
+
+
+const { title, description, author, pubDate, updatedDate, image, tags, lang } = Astro.props;
+
+const heroImage = image ? image : "/placeholder.png"
+const articleAuthor = author ? author : "Le Fantome"
+const language = lang === "fr" ? "fr" : "en"
+const latestDate = updatedDate ? updatedDate : pubDate
+
+
+
+
+const date = getTextDateWBy(new Date(latestDate), language, updatedDate ? true : false  ) + articleAuthor
+
+---
+
+<Layout lang={language} description={description} >
+	<Navbar lang={language} />
+
+	<header>
+		<BlogHeader title={title} author={articleAuthor} published={date} />
+		<BlogImage imgUrl={heroImage} alt='intro image' />
+
+		<div />
+	</header>
+
+	<main>
+		<article>
+			<slot />
+		</article>
+	</main>
+    
+	<Footer lang={language} />
+
+</Layout>
+
+<!-- 
+<Layout>
+
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div class="hero-image">
+					{image && <img width={1020} height={510} src={image} alt="" />}
+				</div>
+				<div class="prose">
+					<div class="title">
+						<div class="date">
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on <FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
+						</div>
+						<h1>{title}</h1>
+						<hr />
+					</div>
+
+					<slot />
+				
+				</div>
+			</article>
+		</main>
+		<Footer />
+</Layout> -->../../components/blog_template/utils

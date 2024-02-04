@@ -1,0 +1,20 @@
+---
+import SideMenu from "./side_menu/sidebar";
+import Logo from "./logo"
+import ThemeToggle from "./theme_toggle"
+
+interface Props {
+	lang? : string
+}
+
+const { lang } = Astro.props
+
+
+---
+
+<SideMenu lang={lang} client:only />
+
+<div id="nav-right">
+    <Logo lang={lang} />
+    <ThemeToggle client:only />
+</div>

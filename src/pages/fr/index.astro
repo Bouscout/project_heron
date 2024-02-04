@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../layouts/Footer.astro';
+import Navbar from '../../components/navbar/navbar.astro';
+import { getCollection } from 'astro:content';
+import AccueilBlog from '../../components/blog_template/blog_home/blog_index';
+
+import { formatFullDate } from "../../components/blog_template/utils"
+
+
+const language = "fr"
+
+
+interface Card {
+    title : string,
+	description : string,
+    image : string,
+    pubDate : string,
+    tags? : string[],
+    url : string,
+}
+
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+
+const featuredPost : any[] = []
+
+for (let index = 0; index < posts.length; index++) {
+	const post = posts[index];
+
+	if (post.slug.slice(0, 2) === language){	
+		featuredPost.push({
+			title: post.data.title,
+			image: post.data.image || 'placeholder.png', // Assuming a default image if none is provided
+			pubDate: formatFullDate(new Date(post.data.pubDate), language),
+			tags: post.data.tags,
+			url: `fr/blog/${post.slug.slice(3)}` ,
+		})
+	}
+}
+
+---
+
+<Layout>
+
+		<Navbar lang={language} />
+
+		<header>
+			<h1>Digital Poetry</h1>
+			<h2>Parler des grandes oeuvres et des raisons de leur impact</h2>
+		</header>
+
+		<main id="blog">
+	
+			<AccueilBlog blogs={featuredPost as Card[]}  />
+
+		</main>
+		<Footer lang={language} />
+</Layout>

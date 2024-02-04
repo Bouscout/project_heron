@@ -1,0 +1,238 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+ @import url("https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap") ;
+    
+ *{
+	 margin: 0;
+	 padding: 0;
+ }
+
+ :root {
+	 --blog-width: clamp(400px, 93vw, 750px);
+
+	 --accent: #2337ff;
+	 --accent-dark: #000d8a;
+	 --black: 15, 18, 25;
+	 --gray: 96, 115, 159;
+
+	 // regular theme
+	 --light-ink : #070707 ;
+	 --light-gray: rgb(229, 233, 240);
+	 --light-color: rgba(11, 11, 11, 0.856);
+	//  --light-bg : linear-gradient(rgba(229, 233, 240, 50%), #fff);
+	 --light-bg : linear-gradient(#d7ddfc81, #fff);
+	 --light-card : #fff;
+	 // --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+	 //     0 16px 32px rgba(var(--gray), 33%);
+
+	 // dark theme
+	 --dark-ink : #ffffffd2;
+	//  --dark-light-ink : #ffffffd2 ;
+	 --dark-gray : rgb(159, 159, 159) ;
+	 --dark-color : #ffffff7a;
+	 --dark-bg : linear-gradient(rgba(13, 13, 13, 100%), #090909) ;
+	 --dark-card : #111111;
+
+
+	 // theme
+	 --bg : var(--light-bg);
+	 --ink : var(--light-ink);
+	//  --shade-ink : ;
+	 --color : var(--light-color) ;
+	 --code-bg : var(--dark-card);
+	 --code-color : var(--light-ink) ;
+	 --card-bg : var(--light-card) ;
+	
+ }
+
+ body {
+	 // background: hsl(224, 32%, 12%);
+	 // background-image: conic-gradient(
+	 // from 0deg at 50% 50%,
+	 // blue,
+	 // purple,
+	 // purple,
+	 // blue
+	 // );
+	 // background-blend-mode: multiply;
+	 // background-color: #0d1117;
+	 // background-color: #101010;
+	 // background: #17171d;
+	 // overflow: hidden;
+
+	 
+
+	 font-size : 4vmin;
+
+	 font-family: 'Atkinson', sans-serif;
+	 margin: 0;
+	 padding: 0;
+	 text-align: left;
+	 // background-color : black;
+	 // background-color: rgb(229, 233, 240);
+	 background-image: var(--bg);
+
+	 background-repeat : no-repeat;
+	 background-size: cover;
+	 // background-size: 100% 600px;
+
+
+	 word-wrap: break-word;
+	 overflow-wrap: break-word;
+	 color: var(--color);
+	 // font-size: 20px;
+	 line-height: 1.7;
+
+	 &::-webkit-scrollbar{
+			 width: 6px;
+	 }
+
+	 &::-webkit-scrollbar-thumb{
+		 background-color: #ab20fd;
+		 border-radius: 2px;
+	 }
+	 
+	 &::-webkit-scrollbar-track{
+		 background-color: transparent;
+	 }
+ }
+
+ code {
+	 font-family:
+		 Menlo,
+		 Monaco,
+		 Lucida Console,
+		 Liberation Mono,
+		 DejaVu Sans Mono,
+		 Bitstream Vera Sans Mono,
+		 Courier New,
+		 monospace;
+
+	 font-size: 1rem;
+	 padding: 2px 5px;
+	 background-color: var(--code-bg);
+	 color: var(--code-color);
+	 border-radius: 2px;
+ }
+
+ main {
+	 &::-webkit-scrollbar{
+		 width: 6px;
+	 }
+
+	 &::-webkit-scrollbar-thumb{
+		 background-color: #ab20fd;
+		 border-radius: 2px;
+	 }
+	 
+	 &::-webkit-scrollbar-track{
+		 background-color: transparent;
+	 }
+ }
+
+
+ .sr-only {
+	 border: 0;
+	 padding: 0;
+	 margin: 0;
+	 position: absolute !important;
+	 height: 1px;
+	 width: 1px;
+	 overflow: hidden;
+	 /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	 clip: rect(1px 1px 1px 1px);
+	 /* maybe deprecated but we need to support legacy browsers */
+	 clip: rect(1px, 1px, 1px, 1px);
+	 /* modern browsers, clip-path works inwards from each corner */
+	 clip-path: inset(50%);
+	 /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	 white-space: nowrap;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-family: "General Sans", sans-serif;
+ margin: 0 0 0.5rem 0;
+ color: var(--ink);
+ line-height: 1em;
+}
+
+
+h1 {
+ font-size: 1em;
+}
+h2 {
+ font-size: 0.8em;
+}
+h3 {
+ font-size: 1.953em;
+}
+h4 {
+ font-size: 1.563em;
+}
+h5 {
+ font-size: 1.25em;
+}
+p, li, footer{
+ font-size: 0.5em;
+}
+
+a{
+	text-decoration: none;
+	color: #5D3FD3 ;
+	transition: color 200ms linear;
+	
+	&:hover{
+		color: #fff;
+	}
+}
+
+
+#nav-right{
+	position: fixed;
+	z-index: 5;
+	top: 18px;
+	right: 15px;
+  
+	display: flex;
+	align-items: center;
+	gap: 1em;
+  
+	#logo{
+	  display: flex;
+	  align-items: center;
+	  gap: 0.2em;
+  
+	  img{
+		width: 50px;
+		aspect-ratio: 1;
+		border-radius: 4px;
+	  }
+	  p{
+		transition: color 300ms linear;
+		color: var(--ink);
+		font-weight: 600;
+		font-size: 0.7em;
+		font-family: "General Sans", sans-serif;
+	  }
+	}
+}
+@media screen and (max-width: 767px) { 
+	body{
+		font-size: 5vmin;
+	}
+	#nav-right{
+		#logo {
+			display: none;
+		}
+	}
+}
