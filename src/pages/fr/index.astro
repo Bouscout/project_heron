@@ -29,15 +29,18 @@ const posts = (await getCollection('blog')).sort(
 const featuredPost : any[] = []
 
 for (let index = 0; index < posts.length; index++) {
-	const post = posts[index];
 
-	if (post.slug.slice(0, 2) === language){	
+	const post = posts[index];
+	const [lang, ...slug] = post.slug.split('/');
+    const url = ["blog", ...slug].join("/")
+
+	if (lang === language){	
 		featuredPost.push({
 			title: post.data.title,
-			image: post.data.image || 'placeholder.png', // Assuming a default image if none is provided
+			image: post.data.image || 'placeholder.webp', // Assuming a default image if none is provided
 			pubDate: formatFullDate(new Date(post.data.pubDate), language),
 			tags: post.data.tags,
-			url: `fr/blog/${post.slug.slice(3)}` ,
+			url: url ,
 		})
 	}
 }

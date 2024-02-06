@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const ThemeToggle = () => {
-    const [light, setLight] = useState(true)
+    const initial = sessionStorage.getItem("digital-poetry-theme")
+    const [light, setLight] = useState(initial === "dark" ? false : true)
 
     let theme ;
 
@@ -32,7 +33,7 @@ const ThemeToggle = () => {
     setVariables(theme);
 
     const changeTheme = () => {
-        console.log("clicked")
+        sessionStorage.setItem("digital-poetry-theme", !light ? "light" : "dark")
         setLight(!light)
     }
 
@@ -42,7 +43,7 @@ const ThemeToggle = () => {
             <motion.div 
             onClick={()=>changeTheme()}
             style={{ transform : light ? "translateX(20px)" : "translateX(-20px)"}}
-            transition={{duration : 1, ease : "linear"}}
+            transition={{duration : 0.5, ease : "linear"}}
             />
 
             <i className="fa-solid fa-sun" />

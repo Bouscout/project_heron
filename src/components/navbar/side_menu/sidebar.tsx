@@ -50,7 +50,6 @@ const SideMenu:FC<Props> = ({lang}) => {
       <Navigation isOpen={isOpen} lang={lang} />
       
       <MenuToggle toggle={() => toggleOpen()} />
-    
     </motion.nav>
     
     </>

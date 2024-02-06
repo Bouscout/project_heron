@@ -31,7 +31,7 @@ export const Navigation:FC<Props> = ({ isOpen, lang }) => {
           
           <MenuItem title="Home" link={homeUrl} icon="fa-solid fa-house" i={0}/>
           <MenuItem title="About-me" link={aboutMe} icon="fa-brands fa-blogger-b" i={1}/>
-          <MenuItem title="Contact" link="mailto:unrationnal@gmail.com" icon="fa-solid fa-envelope" i={2}/>
+          <MenuItem title="Contact" link="mailto:fantomepoetry@gmail.com" icon="fa-solid fa-envelope" i={2}/>
 
         </motion.ul>
 

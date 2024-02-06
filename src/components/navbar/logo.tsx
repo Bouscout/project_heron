@@ -10,11 +10,13 @@ interface Props {
 
 const Logo:FC<Props>= ({ lang }) => {
     const homeUrl = lang ? getRelativeLocaleUrl(lang, "/") : "/"
+    // const homeUrl = lang ? "/"+lang : "/"
+
 
     return (
         <a href={homeUrl} id="logo">
-            <img src="/logo.jpg"  alt="logo" />
             <p>Digital Poetry</p>
+            <img src="/logo.webp"  alt="logo" />
         </a>
     )
 }

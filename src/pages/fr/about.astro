@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Navbar from "../components/navbar/navbar.astro"
-import Footer from "../layouts/Footer.astro"
-import BlogImage from "../components/blog_template/micro_components/blog_img"
+import Layout from "../../layouts/Layout.astro"
+import Navbar from "../../components/navbar/navbar.astro"
+import Footer from "../../layouts/Footer.astro"
+import BlogImage from "../../components/blog_template/micro_components/blog_img"
 
-const language = "en"
+const language = "fr"
 ---
 
 
@@ -12,8 +12,8 @@ const language = "en"
 	
 	
 <style lang="scss">
-	@import "../layouts/colors";
-	@import "../layouts/font";
+	@import "../../layouts/colors";
+	@import "../../layouts/font";
 	
 	
 
@@ -89,7 +89,7 @@ const language = "en"
     <header>
         <h1>Digital Poetry</h1>
 
-		<BlogImage src="placeholder.webp" alt="hero image" caption="  " />
+		<BlogImage src="/placeholder.webp" alt="hero image" caption="  " />
 
 		<div></div>
 
@@ -97,13 +97,13 @@ const language = "en"
 
     <main>
         <article>
+            
+            <p>Bienvenue sur Digital Poetry, mon sanctuaire personnel où je plonge dans les mondes des œuvres d'art numériques, à la recherche des émotions brutes et de l'appréciation intellectuelle qu'elles offrent, le tout en couvrant également quelques informations générales à leur sujet.</p>
 
-			<p>Welcome to Digital Poetry, my personal sanctuary where I delve into the profound world's of pieces of digital art , seeking the raw emotions and intellectual appreciation they offer while also covering some general informations about them. </p>
+            <p>Ce que vous trouverez principalement ici sont mes réflexions, mes idées, mes opinions tranchées et mes réflexions sincères sur les jeux vidéo, les anime, les films et toutes les oeuvres qui ont eu un impact profond sur moi.</p>
 
-			<p>What you'll mainly find here are my musings, insights, hot takes and heartfelt reflections on video games, anime, movies and anything that have left a profound impact on me. </p>
-
-			<p>Feel free to explore the pages, share your own stories, and embark on this journey with me. You can contact me here at <a href="mailto:fantomepoetry@gmail.com">@fantomepoetry@gmail.com</a> feel free to make any suggestions or share your thoughts.</p>
-
+            <p>N'hésitez pas à visiter les pages, à partager vos propres histoires et embarquer dans ce voyage avec moi. Vous pouvez me contacter à l'adresse suivante : <a href="mailto:@fantomepoetry@gmail.com">@fantomepoetry@gmail.com</a>. N'hésitez pas à faire des suggestions ou à partager vos pensées.</p>
+            
 		</article>
 
 		<hr>
@@ -115,3 +115,4 @@ const language = "en"
     <Footer lang={language} />
 
 </Layout>
+

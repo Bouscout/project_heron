@@ -3,6 +3,8 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+@import "../colors";
+@import "../font";
 
  @import url("https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap") ;
     
@@ -39,13 +41,12 @@
 
 
 	 // theme
-	 --bg : var(--light-bg);
-	 --ink : var(--light-ink);
-	//  --shade-ink : ;
-	 --color : var(--light-color) ;
-	 --code-bg : var(--dark-card);
-	 --code-color : var(--light-ink) ;
-	 --card-bg : var(--light-card) ;
+	 --bg : var(--dark-bg);
+	 --ink : var(--dark-ink);
+	 --color : var(--dark-color) ;
+	 --code-bg : var(--light-card);
+	 --code-color : var(--dark-ink) ;
+	 --card-bg : var(--dark-card) ;
 	
  }
 
@@ -97,7 +98,7 @@
 	 }
 	 
 	 &::-webkit-scrollbar-track{
-		 background-color: transparent;
+		 background-color: #000;
 	 }
  }
 
@@ -196,6 +197,11 @@ a{
 	}
 }
 
+img {
+	margin: 0.2em 0;
+	width: 100%;
+	border-radius: 0.3em;
+}
 
 #nav-right{
 	position: fixed;
@@ -206,33 +212,41 @@ a{
 	display: flex;
 	align-items: center;
 	gap: 1em;
+}
   
-	#logo{
-	  display: flex;
-	  align-items: center;
-	  gap: 0.2em;
-  
-	  img{
-		width: 50px;
-		aspect-ratio: 1;
-		border-radius: 4px;
-	  }
-	  p{
-		transition: color 300ms linear;
-		color: var(--ink);
-		font-weight: 600;
-		font-size: 0.7em;
-		font-family: "General Sans", sans-serif;
-	  }
+#logo{
+	position: fixed;
+	z-index: 5;
+	top: 16px;
+	left: 80px;
+	display: flex;
+	align-items: center;
+	gap: 0.2em;
+
+	background-image: linear-gradient(to right, $light-blue, $light-purple);
+	background-clip: text;
+
+	img{
+	width: 50px;
+	aspect-ratio: 1;
+	border-radius: 4px;
+	}
+	p{
+	// transition: color 300ms linear;
+	color: $iris;
+	font-weight: 800;
+	font-size: 0.65em;
+	font-family: "General Sans", sans-serif;
 	}
 }
 @media screen and (max-width: 767px) { 
 	body{
 		font-size: 5vmin;
 	}
-	#nav-right{
-		#logo {
-			display: none;
+	#logo {
+		flex-direction: row-reverse;
+		p{
+			font-size: 0.8em;
 		}
 	}
 }

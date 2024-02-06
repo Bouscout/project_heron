@@ -14,7 +14,8 @@ const { lang } = Astro.props
 
 <SideMenu lang={lang} client:only />
 
+<Logo lang={lang} />
+
 <div id="nav-right">
-    <Logo lang={lang} />
     <ThemeToggle client:only />
 </div>

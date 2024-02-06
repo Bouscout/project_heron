@@ -2,15 +2,16 @@ import type { FC } from "react"
 
 
 interface BlogProps {
-    imgUrl : string,
-    alt : string,
+    src : string,
+    alt? : string,
     caption? : string,
+    eager? : boolean
 }
 
-const BlogImage:FC<BlogProps> = ({ imgUrl, alt, caption}) => (
+const BlogImage:FC<BlogProps> = ({ src, alt="Hero image", caption, eager=false}) => (
     <figure>
-        <img src={imgUrl} alt={alt} />
-        <figcaption>{caption ? caption : ""}</figcaption>
+        <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} />
+        <figcaption>{caption ? caption : alt === "Hero image" ? "" : alt}</figcaption>
     </figure>
 )
 

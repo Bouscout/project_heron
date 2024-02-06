@@ -1,25 +1,33 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPostLayout from '../../../layouts/micro_components/BlogPostLayout.astro';
+import BlogPostLayout  from '../../../layouts/micro_components/BlogPostLayout.astro';
+
+import BlogImageLayout from '../../../layouts/micro_components/BlogImageLayout.astro';
 
 export async function getStaticPaths() {
+  const language = "en"
+
   const pages = await getCollection('blog');
 
   const paths = pages.map(page => {
     const [lang, ...slug] = page.slug.split('/');
-    return { params: { lang, slug: slug.join('/') || undefined }, props: page };
+    const name = slug.at(-1)
+
+    return { params: { slug: name }, props: page , lang : lang};
   });
 
-  return paths;
+  return paths.filter((page) => page.lang === language);
 }
+
 
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-console.log(Content)
 ---
 
 <BlogPostLayout {...post.data}>
-	<Content />
+
+  <Content components={{ Image : BlogImageLayout }} />
+  
 </BlogPostLayout>
