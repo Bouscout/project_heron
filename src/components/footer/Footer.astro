@@ -1,6 +1,9 @@
 ---
+import MailForm  from '../email_subscription/formulaire';
+import "./footer.scss"
+
 interface Props {
-	lang? : string,
+	lang? : "en" | "fr",
 }
 const today = new Date();
 
@@ -13,6 +16,10 @@ console.log("msg : ", lang)
 ---
 
 <footer>
+
+	<MailForm lang={lang ? lang : "en"} client:only />
+
+
 	&copy; {today.getFullYear()} Digital Poetry. {msg}.
 	<div class="social-links">
 
@@ -38,27 +45,7 @@ console.log("msg : ", lang)
 				</svg>
 		</a>
 
-
 	</div>
+
+
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: var(--bg) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--color));
-	}
-</style>
