@@ -50,36 +50,22 @@
 	
  }
 
+ html{
+	overflow-x: hidden;
+ }
+
  body {
-	 // background: hsl(224, 32%, 12%);
-	 // background-image: conic-gradient(
-	 // from 0deg at 50% 50%,
-	 // blue,
-	 // purple,
-	 // purple,
-	 // blue
-	 // );
-	 // background-blend-mode: multiply;
-	 // background-color: #0d1117;
-	 // background-color: #101010;
-	 // background: #17171d;
-	 // overflow: hidden;
-
-	 
-
+	
 	 font-size : 4vmin;
 
 	 font-family: 'Atkinson', sans-serif;
 	 margin: 0;
 	 padding: 0;
 	 text-align: left;
-	 // background-color : black;
-	 // background-color: rgb(229, 233, 240);
 	 background-image: var(--bg);
 
 	 background-repeat : no-repeat;
 	 background-size: cover;
-	 // background-size: 100% 600px;
 
 
 	 word-wrap: break-word;
@@ -87,6 +73,8 @@
 	 color: var(--color);
 	 // font-size: 20px;
 	 line-height: 1.7;
+
+	overflow-x: hidden;
 
 	 &::-webkit-scrollbar{
 			 width: 6px;
@@ -121,6 +109,8 @@
  }
 
  main {
+
+	 overflow-x: hidden;
 	 &::-webkit-scrollbar{
 		 width: 6px;
 	 }

@@ -172,8 +172,13 @@ article {
 @media screen and (max-width: 767px) {
     main{
         article{
-
             font-size: 6.5vmin;
+            $text-size : 0.6em ;
+
+            p{
+                font-size: $text-size;
+            }
+            
         }
     }
 }

@@ -17,7 +17,7 @@ const ShareOnSocialMedia:FC<Props> = ({title, url, prefix}) => {
     return (
         <div className="share-social">
 
-            <span>@Digital Poetry</span>
+            <span>@Pixel Poetry</span>
 
             <div>
             <span>{prefix}</span> 
