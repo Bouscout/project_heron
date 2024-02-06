@@ -17,7 +17,7 @@ export async function RegisterEmail(emailAdress : string) : Promise<boolean> {
         })
 
         // return positive answer
-        console.log("email added : ", emailAdress)
+        console.log("email added : ", emailAdress, " ref : ", docRef)
         return true
 
 

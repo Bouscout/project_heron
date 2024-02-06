@@ -50,20 +50,11 @@ interface BlogMetadata{
   url : string
 }
 
-interface Card {
-    title : string,
-    image : string,
-    pubDate : string,
-    tags? : string[],
-    url : string,
-}
-
-
 
 // Dynamically import blog posts based on the language
 
 // Use an immediately invoked async function and await its result
-export async function fetchContentData(BlogPosts : Record<string, () => Promise<unknown>>, lang : string) : Promise<BlogMetadata[]>{
+export async function fetchContentData(BlogPosts : Record<string, () => Promise<unknown>>) : Promise<BlogMetadata[]>{
 
     const posts: BlogMetadata[] = await (async () => {
         const fetched = [];

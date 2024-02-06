@@ -26,7 +26,7 @@ interface Props {
   icon : string,
 }
 
-export const MenuItem:FC<Props> = ({ i, title, link, icon }) => {
+export const MenuItem:FC<Props> = ({ i,  title, link, icon }) => {
   // const style = { border: `2px solid ${colors[i]}` };
   const style = {}
   return (
