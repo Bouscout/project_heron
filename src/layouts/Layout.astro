@@ -15,7 +15,18 @@ const pageTitle = title ? title : "Digital Poetry"
 
 const language = lang ? lang : "en"
 
-const Pagedescription = description ? description : `Unrationnal is an agency that explores the horizon of the latest technological innovations and harnesses them to help you enjoy them in the simplest way possible.`
+let Pagedescription : string
+
+if (description){
+	Pagedescription = description
+}
+
+else if (language === "fr"){
+	Pagedescription = "Pixel Poetry est un sanctuaire ou on parle des oeuvres digitales qui nous ont profondement marqués"
+}
+else {
+	Pagedescription =`Pixel Poetrey is a sanctuary where we talk about pieces of media art that have deeply impacted us.`
+}
 ---
 
 <!doctype html>

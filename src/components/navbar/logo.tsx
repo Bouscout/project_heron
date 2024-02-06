@@ -15,7 +15,7 @@ const Logo:FC<Props>= ({ lang }) => {
 
     return (
         <a href={homeUrl} id="logo">
-            <p>Digital Poetry</p>
+            <p>Pixel Poetry</p>
             <img src="/logo.webp"  alt="logo" />
         </a>
     )
