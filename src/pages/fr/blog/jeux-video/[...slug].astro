@@ -12,8 +12,9 @@ export async function getStaticPaths() {
   const paths = pages.map(page => {
     const [lang, ...slug] = page.slug.split('/');
     const name = slug.at(-1)
+    const genre = slug.at(-2)
 
-    return { params: { slug: name }, props: page , lang : lang};
+    return { params: { slug: name, genre : genre, lang : lang }, props: page , lang : lang};
   });
 
   return paths.filter((page) => page.lang === language);
@@ -26,7 +27,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPostLayout {...post.data}>
+<BlogPostLayout {...post.data} >
 
   <Content components={{ Image : BlogImageLayout }} />
   

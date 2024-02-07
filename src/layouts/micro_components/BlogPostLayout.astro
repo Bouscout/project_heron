@@ -13,7 +13,7 @@ import "./blog_post.scss"
 type Props = CollectionEntry<'blog'>['data'];
 
 
-const { title, description, author, pubDate, updatedDate, image, tags, lang } = Astro.props;
+const { title, description, author, pubDate, updatedDate, image, tags, lang, genre} = Astro.props;
 
 const url = Astro.url.pathname
 const heroImage = image ? image : "/placeholder.png"
@@ -28,7 +28,11 @@ const date = getTextDateWBy(new Date(latestDate), language, updatedDate ? true :
 
 ---
 
-<Layout lang={language} description={description} title={title} >
+<Layout 
+lang={language} description={description} title={title} author={author}
+pubDate={pubDate} updatedDate={updatedDate} tags={tags} heroImage={image}
+genre={genre}
+>
 	<Navbar lang={language} />
 
 	<header>
