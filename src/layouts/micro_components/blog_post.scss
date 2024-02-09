@@ -11,6 +11,10 @@ header {
     margin-top: 5em;
     margin-bottom: 0.4em;
     color: #fff;
+
+    a{
+        font-size: 0.5em;
+    }
     
     h1 {
         background-image: linear-gradient(to right, $light-blue ,$light-purple) ;
@@ -157,6 +161,14 @@ article {
     }
 
    
+}
+
+.related-articles{
+    display: flex;
+    flex-direction: column;
+    a{
+        font-size: 0.6em;
+    }
 }
 
 .author {

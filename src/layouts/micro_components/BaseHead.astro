@@ -52,6 +52,8 @@ const pageImage = image ? image : "placeholder.webp"
 <meta name="thumbnail" content={new URL(pageImage, Astro.url)} >
 <meta name="robots" content="noodp, noydir, max-image-preview:large">
 
+<link rel="sitemap" href="/sitemap-index.xml" />
+
 <!-- article details -->
 {genre &&
 <meta property="category" content={genre} >

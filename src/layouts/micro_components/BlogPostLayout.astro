@@ -36,6 +36,8 @@ genre={genre}
 	<Navbar lang={language} />
 
 	<header>
+		<a href={language === 'en' ? "/" : `/${language}/`}>{language === "fr" ? "Accueil" : "Home"}</a>
+
 		<h1>{title}</h1>
 		<p>{description}</p>
 		<h2>{date}</h2>

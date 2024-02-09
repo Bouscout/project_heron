@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPostLayout  from '../../../layouts/micro_components/BlogPostLayout.astro';
 
 import BlogImageLayout from '../../../layouts/micro_components/BlogImageLayout.astro';
+import RelatedArticles from '../../../components/blog_template/micro_components/related_articles';
 
 export async function getStaticPaths() {
   const language = "en"
@@ -29,6 +30,6 @@ const { Content } = await post.render();
 
 <BlogPostLayout {...post.data} >
 
-  <Content components={{ Image : BlogImageLayout }} />
+  <Content components={{ Image : BlogImageLayout, RelatedArticles : RelatedArticles }} />
   
 </BlogPostLayout>
