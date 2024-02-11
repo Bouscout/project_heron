@@ -16,11 +16,14 @@ interface Card {
 
 interface AccueilProps{
     blogs : Card[]
+    lang? : string
 }
 
 
 
-const AccueilBlog:FC<AccueilProps> = ({ blogs }) => {
+const AccueilBlog:FC<AccueilProps> = ({ blogs, lang }) => {
+    // apply sorting or filter here before rendering the card
+
     return (
         <>
         {blogs.map((blog, i) => {

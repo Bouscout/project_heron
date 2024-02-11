@@ -11,11 +11,9 @@ export async function getStaticPaths() {
   const pages = await getCollection('blog');
 
   const paths = pages.map(page => {
-    const [lang, ...slug] = page.slug.split('/');
-    const name = slug.at(-1)
-    const genre = slug.at(-2)
-
-    return { params: { slug: name, genre : genre, lang : lang }, props: page , lang : lang};
+    const [lang, genre, name] = page.slug.split('/');
+    
+    return { params: { slug: name, name : name, genre : genre, lang : lang }, props: page , lang : lang};
   });
 
   return paths.filter((page) => page.lang === language);
