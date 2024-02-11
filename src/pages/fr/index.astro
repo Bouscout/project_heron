@@ -27,16 +27,14 @@ const posts = (await getCollection('blog')).sort(
 
 
 const featuredPost : any[] = []
-const current = Astro.url.pathname.split("/").at(-1)
+// const current = Astro.url.pathname.split("/").at(-1)
 
 for (let index = 0; index < posts.length; index++) {
 	const post = posts[index];
 	const [lang, ...slug] = post.slug.split('/');
 
-	const pages = ["blog", ...slug]
-	if (lang !== "en" && current === lang){
-		pages.unshift(lang)
-	}
+	const pages = [lang, "blog", ...slug]
+	
 
     const url = pages.join("/")
 
