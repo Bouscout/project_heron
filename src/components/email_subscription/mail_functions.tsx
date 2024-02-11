@@ -33,7 +33,6 @@ export const checkMailValidity = (emailAdress : string) : boolean => {
     return isValid
 }
 
-// console.log("the key is : ", import.meta.env.PUBLIC_TEST)
 
 export const emailInputBorderColor = (isValid:boolean, emailAdress:string) : React.CSSProperties => {
     if (emailAdress.length <= 0){ return {} }
