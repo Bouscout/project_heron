@@ -1,5 +1,6 @@
 ---
 import MailForm  from '../email_subscription/formulaire';
+import LanguageSwap from "../footer/change_lang/language_swap"
 import "./footer.scss"
 
 interface Props {
@@ -44,6 +45,8 @@ const msg = lang === "fr" ? "Tout droits reservés" : "All rights reserved."
 		</a>
 
 	</div>
+
+	<LanguageSwap />
 
 
 </footer>

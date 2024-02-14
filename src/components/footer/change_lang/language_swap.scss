@@ -1,0 +1,25 @@
+@import "../../../layouts/colors" ;
+
+
+#language-swap {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-inline: auto;
+    gap: 0.5em;
+    
+    
+    a{
+        background-color: $light-blue;
+        font-family: var(--main-font);
+        color: $white;
+        transition: transform 300ms linear, background-color 300ms linear;
+        width: 70px;
+        border-radius: 5px;
+
+        &:hover{
+            transform: scale(1.1);
+            background-color: $neon-orange;
+        }
+    }
+}
