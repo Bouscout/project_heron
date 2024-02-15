@@ -11,11 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enable experimental webframeeworks
+        uses: actions/checkout@v3
         run: |
+          npm install firebase-tools
           npx firebase experiments:enable webframeworks
 
-      - uses: actions/checkout@v4
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploying to firebase
+        uses: actions/checkout@v4
+        uses: FirebaseExtended/action-hosting-deploy@v0
 
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
