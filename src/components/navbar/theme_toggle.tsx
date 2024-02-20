@@ -17,6 +17,8 @@ const ThemeToggle = () => {
             '--code-bg': 'var(--dark-color)',
             '--color-color': 'var(--light-ink)',
             "--card-bg" : "var(--light-card)", 
+            "--card-gradient" : "var(--light-gradient)", 
+            
         };
     }else {
         theme = {
@@ -26,6 +28,7 @@ const ThemeToggle = () => {
             '--code-bg': 'var(--light-color)',
             '--color-color': 'var(--dark-ink)',
             "--card-bg" : "var(--dark-card)", 
+            "--card-gradient" : "var(--dark-gradient)", 
         };    
     }
     

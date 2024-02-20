@@ -11,7 +11,7 @@ interface Card {
     url : string,
 }
 
-const BlogCard:FC<Card> = ({ title, image, pubDate, tags, url }) => (
+export const BlogCard:FC<Card> = ({ title, image, pubDate, tags, url }) => (
         <div className="blog-card">
             <CardImage imgUrl={image} alt={title} />
             <CardDetails title={title} tags={tags} published={pubDate} url={url} />

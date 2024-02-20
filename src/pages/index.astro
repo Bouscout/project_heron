@@ -31,6 +31,7 @@ const featuredPost : any[] = []
 for (let index = 0; index < posts.length; index++) {
 	const post = posts[index];
 	const [lang, ...slug] = post.slug.split('/');
+	const genre = slug.at(-2)
     const url = ["blog", ...slug].join("/")
 	
 	if (lang === language){	
@@ -39,7 +40,8 @@ for (let index = 0; index < posts.length; index++) {
 			title: post.data.title,
 			image: post.data.image || 'placeholder.webp', // Assuming a default image if none is provided
 			pubDate: formatFullDate(new Date(post.data.pubDate), language),
-			tags: post.data.tags,
+			// tags: post.data.tags,
+			tags: [genre],
 			url: url ,
 		})
 	}
