@@ -22,12 +22,12 @@ export const getTextDateWBy = (date:Date, lang:string, updated:boolean=false) : 
     let suffix = ""
 
     if (lang === "en"){
-        prefix = !updated ? "Published on " : "Updated on"  
+        prefix = !updated ? "Published on " : "Updated on "  
         suffix = " by"
     }
     
     else if (lang === "fr"){
-        prefix = !updated ? "Publié " : "Mis à jour"
+        prefix = !updated ? "Publié " : "Mis à jour "
         suffix = " par"
     }
 
