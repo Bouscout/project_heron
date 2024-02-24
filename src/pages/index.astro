@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/footer/Footer.astro';
 import Navbar from '../components/navbar/navbar.astro';
 import { getCollection } from 'astro:content';
 import AccueilBlog from '../components/blog_template/blog_home/blog_index';
@@ -50,13 +49,13 @@ for (let index = 0; index < posts.length; index++) {
 ---
 
 
-<Layout>
+<Layout lang={language}>
 
 		<Navbar />
 
 		<header>
 			<h1>Pixel Poetry</h1>
-			<h2>Talking about great pieces of media and why they are so impactful</h2>
+			<h2>Symphony of thoughts...</h2>
 		</header>
 
 		<main id="blog">
@@ -64,5 +63,4 @@ for (let index = 0; index < posts.length; index++) {
 			<AccueilBlog blogs={featuredPost as Card[]} />
 
 		</main>
-		<Footer />
 </Layout>

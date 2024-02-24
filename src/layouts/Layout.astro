@@ -1,7 +1,7 @@
-
-
 ---
 import BaseHead from './micro_components/BaseHead.astro'
+import Footer from "../components/footer/Footer.astro"
+
 interface Props {
 	author? : string
 	title?: string
@@ -43,6 +43,8 @@ else {
 	</head>
 	<body>
 		<slot />
+
+		<Footer lang={language as "en" | "fr"} />
 	</body>
 </html>
 

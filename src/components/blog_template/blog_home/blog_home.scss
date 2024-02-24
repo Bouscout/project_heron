@@ -7,10 +7,13 @@ header{
     height: clamp(200px, 50vh, 500px);
     margin-top: 0;
     margin-bottom: 1em;
-    background-image: url("/blog-placeholder-5.webp");
+    background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.503), rgba(0, 0, 0, 0.503)),
+    url("/main_header.webp"),
+    ;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     // background-clip: text;
     display: flex;
     flex-direction: column;
@@ -70,7 +73,7 @@ header{
 
             &:hover{
                 transform: none;
-                background: #00000024;
+                background: linear-gradient(to top, black, transparent);
 
                 img{
                     transform: scale(0.9);

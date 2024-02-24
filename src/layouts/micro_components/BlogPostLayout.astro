@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../Layout.astro';
-import Footer from '../../components/footer/Footer.astro';
 import Navbar from '../../components/navbar/navbar.astro';
 import ShareOnSocialMedia from '../../components/blog_template/share_blog/share_blog';
 
@@ -33,22 +32,31 @@ lang={language} description={description} title={title} author={author}
 pubDate={pubDate} updatedDate={updatedDate} tags={tags} heroImage={image}
 genre={genre}
 >
-	<Navbar lang={language} />
-
 	<header>
-		<a href={language === 'en' ? "/" : `/${language}/`}>{language === "fr" ? "Accueil" : "Home"}</a>
-
-		<h1>{title}</h1>
-		<p>{description}</p>
-		<span>{date}</span>
-		<BlogImage src={heroImage} alt='intro image' caption="  " eager={true} />
-
-		<div />
+		<Navbar lang={language} />
 	</header>
 
+	
 	<main>
+		
+		<div id="tags">
+			<p>{tags.join(" • ")}</p>
+		</div>
+
 		<article>
+
+			<header>
+		
+				<h1>{title}</h1>
+				<p>{description}</p>
+				<span>{date}</span>
+				<BlogImage src={heroImage} alt='intro image' caption="  " eager={true} />
+		
+				<div />
+			</header>
+
 			<slot />
+
 		</article>
 
 		
@@ -62,6 +70,5 @@ genre={genre}
 	
 	</main>
     
-	<Footer lang={language} />
 
 </Layout>

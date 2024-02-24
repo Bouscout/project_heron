@@ -6,8 +6,8 @@ import {type FC, useState } from "react"
 import { RegisterEmail, checkMailValidity, emailInputBorderColor, MailLogMessage } from "./mail_functions"
 
 const mailMessage = {
-    "en" : "Drop your mail address to not miss any new articles",
-    "fr" : "Laisse ton adresse email pour ne rien rater"
+    "en" : "Drop your email address for more ",
+    "fr" : "Laisse ton adresse email pour plus"
 }
 
 

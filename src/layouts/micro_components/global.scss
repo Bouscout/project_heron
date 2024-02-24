@@ -14,7 +14,7 @@
  }
 
  :root {
-	 --blog-width: clamp(400px, 93vw, 750px);
+	 --blog-width: clamp(380px, 93vw, 750px);
 
 	 --accent: #2337ff;
 	 --accent-dark: #000d8a;
@@ -217,7 +217,8 @@ img {
 	align-items: center;
 	gap: 0.2em;
 
-	background-image: linear-gradient(to right, $light-blue, $neon-orange);
+	// background-image: linear-gradient(to right, $light-blue, $neon-orange);
+	background-image: linear-gradient(to right, $light-blue, $white);
 	background-clip: text;
 
 	img{
